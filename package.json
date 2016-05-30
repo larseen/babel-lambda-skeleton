@@ -1,7 +1,7 @@
 {
   "name": "babel-lambda-skeleton",
   "version": "0.0.0",
-  "description": "Basic setup for an AWS Lambda functio using Webpack and Babel",
+  "description": "Basic setup for an AWS Lambda function using Webpack and Babel",
   "main": "src/index.js",
   "author": "Kristoffer K Larsen <kristoffer@larsen.so>",
   "repository": {
