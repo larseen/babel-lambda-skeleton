@@ -1,0 +1,8 @@
+{
+    "FunctionName": "babel-lambda-skeleton",
+    "Runtime": "nodejs4.3",
+    "Role": "arn:aws:iam::775479825196:role/lambda",
+    "Handler": "dist.index",
+    "Description": "An basic AWS Lambda function",
+    "Publish": true
+}

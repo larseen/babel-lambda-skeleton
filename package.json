@@ -1,0 +1,64 @@
+{
+  "name": "babel-lambda-skeleton",
+  "version": "0.0.0",
+  "description": "Basic setup for an AWS Lambda functio using Webpack and Babel",
+  "main": "src/index.js",
+  "author": "Kristoffer K Larsen <kristoffer@larsen.so>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larseen/babel-lambda-skeleton"
+  },
+  "bugs": {
+    "url": "https://github.com/larseen/babel-lambda-skeleton/issues"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "keywords": [
+    "AWS",
+    "Lambda",
+    "babel",
+    "skeleton",
+    "starter",
+    "webpack"
+  ],
+  "license": "ISC",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "aws": "babel-node scripts/deploy",
+    "deploy": "npm run build && npm run aws",
+    "build": "npm run clean && npm run webpack && npm run compress",
+    "clean": "rm -fr dist && rm -fr dist.zip",
+    "webpack": "webpack --config webpack.config.js",
+    "compress": "zip dist.zip dist/index.js",
+    "test": "npm run lint && nyc --babel --reporter=text ava"
+  },
+  "devDependencies": {
+    "ava": "^0.15.1",
+    "aws-lambda-mock-context": "^3.0.0",
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "child-process-promise": "^2.0.2",
+    "colors-cli": "^1.0.7",
+    "eslint": "^2.11.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-react": "^5.1.1",
+    "json-loader": "^0.5.4",
+    "loading-cli": "^1.0.2",
+    "nyc": "^6.4.4",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "apex.js": "^1.1.0",
+    "babel-polyfill": "^6.9.1"
+  }
+}
