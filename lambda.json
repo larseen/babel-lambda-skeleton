@@ -4,5 +4,7 @@
     "Role": "arn:aws:iam::775479825196:role/lambda",
     "Handler": "dist.default",
     "Description": "An basic AWS Lambda function",
+    "Timeout": 3,
+    "MemorySize": 128, 
     "Publish": true
 }

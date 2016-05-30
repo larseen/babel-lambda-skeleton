@@ -1,5 +1,3 @@
-var webpack = require("webpack"); // eslint-disable-line
-
 module.exports = {
     entry: './src/index.js',
     target: 'node',
@@ -8,9 +6,6 @@ module.exports = {
         filename: 'index.js',
         libraryTarget: 'commonjs2'
     },
-    plugins: [
-        new webpack.IgnorePlugin(/cls-bluebird/, /request-promise/)
-    ],
     module: {
         loaders: [
             {

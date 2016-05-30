@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import test from 'ava';
 import lambda from '../src';
 import context from 'aws-lambda-mock-context';
@@ -6,20 +7,14 @@ const data = {
     value: 'test data'
 };
 
-test('Function should pass', t => {
+test('Function should pass', async t => {
     const ctx = context();
     lambda(data, ctx);
-    ctx.Promise
-        .then(result => {
-            t.true(result === data.value.toUpperCase());
-        });
+    t.is(await ctx.Promise, data.value.toUpperCase());
 });
 
-test('Function should fail', t => {
+test('Function should fail', async t => {
     const ctx = context();
     lambda(data, ctx);
-    ctx.Promise
-        .then(result => {
-            t.fail(result === data.value);
-        });
+    t.not(await ctx.Promise, data.value);
 });
