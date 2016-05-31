@@ -12,10 +12,7 @@
     "url": "https://github.com/larseen/babel-lambda-skeleton/issues"
   },
   "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
+    "require": "babel-core/register"
   },
   "keywords": [
     "AWS",
@@ -36,7 +33,7 @@
     "clean": "rm -fr dist && rm -fr dist.zip",
     "webpack": "webpack --config webpack.config.js",
     "compress": "zip dist.zip dist/index.js",
-    "test": "npm run lint && nyc --babel --reporter=text ava"
+    "test": "npm run lint && nyc --reporter=text ava"
   },
   "devDependencies": {
     "ava": "^0.15.1",
