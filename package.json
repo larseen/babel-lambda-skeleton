@@ -24,7 +24,7 @@
     "starter",
     "webpack"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "aws": "babel-node scripts/deploy",
