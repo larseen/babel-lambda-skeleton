@@ -1,7 +1,7 @@
 {
   "name": "babel-lambda-skeleton",
   "version": "0.0.0",
-  "description": "Basic setup for an AWS Lambda function using Webpack and Babel",
+  "description": "Basic setup for an AWS Lambda function using Babel",
   "main": "src/index.js",
   "author": "Kristoffer K Larsen <kristoffer@larsen.so>",
   "repository": {
@@ -12,7 +12,10 @@
     "url": "https://github.com/larseen/babel-lambda-skeleton/issues"
   },
   "ava": {
-    "require": "babel-core/register"
+    "require": "babel-core/register",
+    "files": [
+      "test/**/*.test.js"
+    ]
   },
   "keywords": [
     "AWS",
@@ -21,42 +24,38 @@
     "es6",
     "amazon",
     "skeleton",
-    "starter",
-    "webpack"
+    "starter"
   ],
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "aws": "babel-node scripts/deploy",
-    "deploy": "npm run build && npm run aws",
-    "build": "npm run clean && npm run webpack && npm run compress",
+    "deploy": "npm run dist && npm run aws",
+    "dist": "npm run clean && npm run build && npm run dependencies && npm run compress",
+    "build": "babel src --out-dir dist",
     "clean": "rm -fr dist && rm -fr dist.zip",
-    "webpack": "webpack --config webpack.config.js",
-    "compress": "zip dist.zip dist/index.js",
-    "test": "npm run lint && nyc --reporter=text ava"
+    "dependencies": "cp ./package.json ./dist/package.json && npm --only=production --prefix ./dist install ./dist",
+    "compress": "zip -r dist.zip dist",
+    "test": "npm run lint && nyc --reporter=text ava",
+    "test:watch": "ava --watch"
   },
   "devDependencies": {
     "ava": "^0.15.1",
     "aws-lambda-mock-context": "^3.0.0",
     "babel-core": "^6.3.21",
     "babel-eslint": "^6.0.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-stage-2": "^6.3.13",
-    "babel-plugin-espower": "^2.1.0",
-    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
     "child-process-promise": "^2.0.2",
     "colors-cli": "^1.0.7",
     "coveralls": "^2.11.9",
-    "eslint": "^2.11.0",
-    "eslint-config-airbnb": "^9.0.1",
+    "eslint": "^2.12.0",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-async-await": "0.0.0",
     "eslint-plugin-import": "^1.8.1",
-    "eslint-plugin-jsx-a11y": "^1.2.2",
-    "eslint-plugin-react": "^5.1.1",
     "json-loader": "^0.5.4",
     "loading-cli": "^1.0.2",
-    "nyc": "^6.4.4",
-    "webpack": "^1.13.1"
+    "nyc": "^6.4.4"
   },
   "dependencies": {
     "apex.js": "^1.1.0",

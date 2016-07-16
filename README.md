@@ -2,7 +2,7 @@
 
 `babel-lambda-skeleton` is meant to be all the necessary boilerplate needed for you to get started creating, testing and deploying Lambda functions to Amazon Web Services.
 
-This configuration enables you to write and test your lambda functions in ES6, and compiling them using Webpack and Babel. The code is easily uploaded to AWS using the `aws-cli`.
+This configuration enables you to write and test your lambda functions in ES6, and compiling them using  Babel. The code is easily uploaded to AWS using the `aws-cli`.
 
 ## Build
 
