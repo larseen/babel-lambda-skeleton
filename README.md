@@ -1,4 +1,4 @@
-# babel-lambda-skeleton [![Build Status](https://travis-ci.org/larseen/babel-lambda-skeleton.svg?branch=master)](https://travis-ci.org/larseen/babel-lambda-skeleton)  [![Coverage Status](https://coveralls.io/repos/github/larseen/babel-lambda-skeleton/badge.svg?branch=master)](https://coveralls.io/github/larseen/babel-lambda-skeleton?branch=master)
+# babel-lambda-skeleton [![Build Status](https://travis-ci.org/larseen/babel-lambda-skeleton.svg?branch=master)](https://travis-ci.org/larseen/babel-lambda-skeleton)
 
 `babel-lambda-skeleton` is meant to be all the necessary boilerplate needed for you to get started creating, testing and deploying Lambda functions to Amazon Web Services.
 
